@@ -1,38 +1,192 @@
-.App {
-  text-align: center;
+html,
+#root,
+.tuum-contact-page {
+  min-height: 100vh
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+input:focus {
+  outline: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.tuum-contact-page {
+  padding-left: 7rem;
+  padding-right: 7rem;
+  padding-top: 5rem;
+  background-color: #a7d0d8;
+  padding-bottom: 3rem;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.tuum-contact-page > h4 {
+  margin: 0 0 0 35%;
+  font-size: 2.5rem;
+  font-weight: 500;
+  padding-bottom: 3.5rem;
+}
+
+.tuum-contact-container {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+}
+
+.tuum-contact-container__contact-info {
+  width: 35%;
+}
+
+.tuum-contact-container__contact-info-item {
+  width: 100%;
+  font-size: 1.125rem;
+  font-weight: 500;
+  line-height: 1.75rem;
+  margin-bottom: 2rem;
+}
+
+.tuum-contact-container__contact-info-item > p {
+  font-weight: normal;
+  color: #505a6c;
+  margin: 0;
+}
+
+.tuum-contact-container__contact-form-container {
+  width: 65%;
+}
+
+.tuum-contact-container__contact-form {
+  width: 75%;
+}
+
+.tuum-contact-container__contact-form > button {
+  opacity: 0.5;
+  font-size: 1.5rem;
+  line-height: 2rem;
+  background-color: transparent;
+  border-width: 0 0 1px 0;
+  padding: 0;
+  margin-top: 10px;
+}
+
+.tuum-contact-container__contact-form > button.active {
+  color: black;
+  cursor: pointer;
+}
+
+.tuum-contact-container__contact-form-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  row-gap: 2.25rem;
+  column-gap: 1.5rem;
+  display: grid;
+}
+
+.pt-4 {
+  padding-top: 4rem;
+}
+
+.pt-2 {
+  padding-top: 2rem;
+}
+
+.tuum-contact-container__contact-form-grid > input {
+  --tw-border-opacity: 0.6;
+  background-color: transparent;
+  border-width: 0 0 1px 0;
+  border-color: rgb(20 9 35 / var(--tw-border-opacity));
+  height: 3rem;
+  font-size: 100%;
+  line-height: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+.tuum-contact-container__contact-form-grid > select {
+  --tw-border-opacity: 0.6;
+  background-color: transparent;
+  border-width: 0 0 1px 0;
+  border-color: rgb(20 9 35 / var(--tw-border-opacity));
+  height: 3rem;
+  font-size: 100%;
+  line-height: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+.tuum-contact-container__contact-form-footer > label {
+  width: 100%;
+}
+
+.tuum-contact-container__contact-form-footer > label > textarea {
+  padding: 0.5rem;
+  border-width: 1px;
+  height: 7rem;
+  width: 100%;
+  background-color: transparent;
+  margin-top: 0.5rem;
+  border-color: black;
+}
+
+.tuum-contact-container__contact-form-footer > .checkbox-container {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.tuum-contact-container__contact-form-footer > .checkbox-container > input {
+  width: 1.25rem;
+  height: 1.25rem;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.tuum-contact-container__contact-form-footer > .checkbox-container > p > a {
+  text-decoration: none;
+  color: gray;
+}
+
+
+@media only screen and (min-width: 0px) {
+  .tuum-contact-container {
+    display: flex;
+    flex-direction: column;
   }
-  to {
-    transform: rotate(360deg);
+  .tuum-contact-container__contact-info {
+    width: 100% !important;
+  }
+
+  .tuum-contact-container__contact-form-container{
+    width: 100% !important;
+  }
+
+  .tuum-contact-container__contact-form-grid {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+    row-gap: 2.25rem;
+    column-gap: 1.5rem;
+    display: grid;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .tuum-contact-container__contact-form-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    row-gap: 2.25rem;
+    column-gap: 1.5rem;
+    display: grid;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .tuum-contact-container {
+    display: flex;
+    flex-direction: row;
+  }
+  .tuum-contact-container__contact-info {
+    width: 35% !important;
+  }
+
+  .tuum-contact-container__contact-form-container{
+    width: 65% !important;
+  } 
+
+  .tuum-contact-container__contact-form-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    row-gap: 2.25rem;
+    column-gap: 1.5rem;
+    display: grid;
   }
 }

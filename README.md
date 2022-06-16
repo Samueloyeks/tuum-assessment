@@ -44,3 +44,17 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
+
+### `Explanation of implementation choices`
+
+I implemented my solution using as few 3rd party libraries as possible. I used material UI icons for icons. I have broken down my application mainly into 2 functional components to implement the contact page. One is the main App component, and the other is my custom SelectInput component which i use to implement the search and filter dropdown. 
+
+I decided to break down these components this way to seperate concerns and make the project more modular and neat. This is also the reason i created a CountriesService to handle API requests related to countries.
+
+I used the countries API from restcountries.com to get the list of countries and their flags. I used axios to make my API calls beacause among other benefits, axios performs automatic JSON data transformation, has built-in CSRF protection and has a way to set a response timeout. 
+
+### `Analysis on bundle size reduction`
+
+To start with, this project is relatively small and little can be done to compress the bundle size further, but i have made some small considerations in my implementation to help reduce it. For example, I import the KeyboardArrowDownIcon from material-ui like this `import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown"` instead of like `import { KeyboardArrowDownIcon } from "@mui/icons-material"`, and this helps to reduce my material-ui bundle size.
+I also avoided using 3rd party libraries as much as possible, and instead implemented my own components.
+Using of react hooks inside react functional components also helps to reduce the bundle size.
